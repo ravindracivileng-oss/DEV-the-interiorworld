@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV The Interior World | Interior &amp; Exterior Designers, Vijayawada</title>
+<meta name="description" content="DEV The Interior World — Interior &amp; exterior design, modular kitchens, false ceilings &amp; renovations in Vijayawada. Free consultation. Call or WhatsApp today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#2B211A;
+    --espresso-soft:#3E3126;
+    --cream:#FAF6EF;
+    --sand:#EDE3D2;
+    --terracotta:#C1652F;
+    --terracotta-dark:#A34F22;
+    --slate:#6E8AA3;
+    --brass:#B08D57;
+    --ink:#2E2A24;
+    --ink-soft:#6b6255;
+    --line:#E1D6C2;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    color:var(--espresso);
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  p{line-height:1.7;color:var(--ink-soft);margin:0;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--terracotta);display:inline-block;}
+  section{position:relative;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:15px 28px;
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.01em;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--terracotta);color:#fff;}
+  .btn-primary:hover{background:var(--terracotta-dark);}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.55);}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+  .btn-dark{background:var(--espresso);color:#fff;}
+  .btn-dark:hover{background:#181109;}
+  .btn-outline{background:transparent;color:var(--espresso);border-color:var(--espresso);}
+  .btn-outline:hover{background:var(--espresso);color:#fff;}
+  .btn svg{width:17px;height:17px;flex-shrink:0;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:500;
+    background:rgba(250,246,239,0.0);
+    transition:background .3s ease, box-shadow .3s ease, padding .3s ease;
+    padding:22px 0;
+  }
+  header.scrolled{
+    background:rgba(250,246,239,0.96);
+    backdrop-filter:blur(8px);
+    box-shadow:0 1px 0 var(--line);
+    padding:14px 0;
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    font-family:'Fraunces',serif;
+    font-size:21px;
+    font-weight:600;
+    color:#fff;
+    letter-spacing:0.01em;
+    transition:color .3s ease;
+  }
+  header.scrolled .logo{color:var(--espresso);}
+  .logo span{color:var(--terracotta);}
+  nav{display:flex;align-items:center;gap:34px;}
+  .nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    font-size:14px;font-weight:600;color:#fff;
+    transition:color .3s ease;
+    position:relative;
+  }
+  header.scrolled .nav-links a{color:var(--ink);}
+  .nav-links a:hover{color:var(--terracotta);}
+  .header-ctas{display:flex;gap:10px;align-items:center;}
+  .icon-btn{
+    width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;transition:all .3s ease;
+  }
+  header.scrolled .icon-btn{border-color:var(--line);color:var(--espresso);}
+  .icon-btn:hover{background:var(--terracotta);border-color:var(--terracotta);color:#fff;}
+  .icon-btn svg{width:18px;height:18px;}
+  .menu-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    height:100vh;min-height:640px;
+    display:flex;align-items:flex-end;
+    position:relative;
+    background:linear-gradient(180deg, rgba(20,15,10,0.35) 0%, rgba(20,15,10,0.25) 45%, rgba(15,11,7,0.88) 100%), url('images/hall01.jpg') center/cover no-repeat;
+  }
+  .hero-content{padding-bottom:90px;width:100%;}
+  .hero-content .eyebrow{color:#E9C79C;}
+  .hero-content .eyebrow::before{background:#E9C79C;}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(38px,5.4vw,68px);
+    line-height:1.06;
+    margin:20px 0 22px;
+    max-width:820px;
+    font-weight:600;
+  }
+  .hero h1 em{color:#E9C79C;font-style:normal;}
+  .hero p.lead{
+    color:rgba(255,255,255,0.82);
+    font-size:17px;
+    max-width:520px;
+    margin-bottom:34px;
+  }
+  .hero-stats{
+    display:flex;gap:44px;margin-top:56px;padding-top:28px;
+    border-top:1px solid rgba(255,255,255,0.22);
+    flex-wrap:wrap;
+  }
+  .hero-stats div strong{
+    display:block;font-family:'Fraunces',serif;color:#fff;font-size:30px;font-weight:600;
+  }
+  .hero-stats div span{color:rgba(255,255,255,0.65);font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;}
+
+  /* ---------- Swatch divider (signature element) ---------- */
+  .swatch-strip{
+    display:flex;height:14px;width:100%;
+  }
+  .swatch-strip div{flex:1;}
+
+  /* ---------- Section titles ---------- */
+  .section-head{max-width:600px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,42px);margin-top:16px;line-height:1.15;}
+  .section-head p{margin-top:16px;font-size:16px;}
+  .section-pad{padding:100px 0;}
+  .bg-sand{background:var(--sand);}
+  .bg-dark{background:var(--espresso);}
+  .bg-dark .section-head h2, .bg-dark h3{color:#fff;}
+  .bg-dark p{color:rgba(255,255,255,0.62);}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--cream);padding:44px 34px;
+    transition:background .25s ease;
+  }
+  .service-card:hover{background:#fff;}
+  .service-card .num{
+    font-family:'Fraunces',serif;font-size:13px;color:var(--brass);
+    letter-spacing:0.08em;font-weight:600;
+  }
+  .service-card svg{width:34px;height:34px;color:var(--terracotta);margin:20px 0 22px;}
+  .service-card h3{font-size:20px;margin-bottom:12px;font-weight:600;}
+  .service-card p{font-size:14.5px;}
+
+  /* ---------- Why choose us ---------- */
+  .why-grid{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;
+  }
+  .why-list{margin-top:36px;display:flex;flex-direction:column;gap:26px;}
+  .why-item{display:flex;gap:18px;}
+  .why-item .mark{
+    width:34px;height:34px;border-radius:50%;background:var(--terracotta);
+    color:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:14px;font-weight:600;
+  }
+  .why-item h4{font-size:16.5px;margin-bottom:6px;color:var(--espresso);font-family:'Manrope',sans-serif;font-weight:700;}
+  .why-item p{font-size:14.5px;}
+  .why-photo{position:relative;}
+  .why-photo img{border-radius:2px;}
+  .why-photo .frame{
+    position:absolute;top:-22px;right:-22px;bottom:22px;left:22px;
+    border:1px solid var(--terracotta);z-index:-1;
+  }
+  .facade-note{
+    margin-top:32px;padding:20px 22px;background:var(--sand);border-left:3px solid var(--terracotta);
+  }
+  .facade-note p{font-size:13.5px;color:var(--espresso-soft);}
+
+  /* ---------- Portfolio ---------- */
+  .filter-row{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap;}
+  .filter-btn{
+    padding:9px 20px;font-size:13px;font-weight:700;border:1px solid var(--line);
+    border-radius:30px;background:transparent;color:var(--ink-soft);cursor:pointer;
+    transition:all .2s ease;
+  }
+  .filter-btn.active, .filter-btn:hover{background:var(--espresso);color:#fff;border-color:var(--espresso);}
+  .gallery{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:10px;
+  }
+  .gallery figure{
+    margin:0;position:relative;overflow:hidden;border-radius:2px;cursor:pointer;
+  }
+  .gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gallery figure:hover img{transform:scale(1.08);}
+  .gallery figure::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(20,15,10,0) 50%, rgba(20,15,10,0.75) 100%);
+    opacity:0;transition:opacity .3s ease;
+  }
+  .gallery figure:hover::after{opacity:1;}
+  .gallery figcaption{
+    position:absolute;left:16px;bottom:14px;color:#fff;font-size:13px;font-weight:700;
+    opacity:0;transform:translateY(8px);transition:all .3s ease;z-index:2;
+  }
+  .gallery figure:hover figcaption{opacity:1;transform:translateY(0);}
+  .gallery figure.tall{grid-row:span 2;}
+  .gallery figure.wide{grid-column:span 2;}
+
+  /* ---------- Process ---------- */
+  .process-wrap{
+    position:relative;border-radius:4px;overflow:hidden;
+    background:var(--espresso);
+  }
+  .process-bg{
+    position:absolute;inset:0;opacity:0.14;
+    background:url('images/first_floor.jpg') center/cover;
+    filter:grayscale(1) contrast(1.1);
+  }
+  .process-inner{position:relative;padding:80px 60px;}
+  .process-steps{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:44px;
+  }
+  .process-step .stepnum{
+    font-family:'Fraunces',serif;font-size:44px;color:var(--terracotta);font-weight:600;line-height:1;
+  }
+  .process-step h4{color:#fff;font-size:17px;margin:16px 0 10px;font-family:'Fraunces',serif;font-weight:600;}
+  .process-step p{color:rgba(255,255,255,0.6);font-size:13.5px;}
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .testi-card{
+    background:#fff;padding:34px 30px;border:1px solid var(--line);border-radius:2px;
+  }
+  .stars{color:var(--terracotta);font-size:14px;letter-spacing:2px;margin-bottom:16px;}
+  .testi-card p.quote{font-size:14.5px;color:var(--espresso-soft);font-style:italic;margin-bottom:22px;}
+  .testi-who{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:38px;height:38px;border-radius:50%;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;
+    color:var(--terracotta);font-weight:700;font-size:15px;
+  }
+  .testi-who strong{display:block;font-size:14px;color:var(--espresso);}
+  .testi-who span{font-size:12px;color:var(--ink-soft);}
+  .google-badge{
+    display:flex;align-items:center;gap:12px;margin-top:44px;padding:20px 26px;
+    background:var(--sand);border-radius:2px;max-width:460px;
+  }
+  .google-badge strong{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--espresso);}
+  .google-badge span{font-size:13px;color:var(--ink-soft);}
+
+  /* ---------- CTA banner ---------- */
+  .cta-banner{
+    background:var(--terracotta);
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-banner h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:26px;}
+  .cta-banner .cta-row{justify-content:center;}
+  .cta-banner .btn-ghost{border-color:rgba(255,255,255,0.7);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .contact-info{background:var(--espresso);padding:60px 50px;color:#fff;}
+  .contact-info h3{color:#fff;font-size:24px;margin-bottom:8px;}
+  .contact-info>p{color:rgba(255,255,255,0.6);margin-bottom:36px;font-size:14.5px;}
+  .contact-row{display:flex;gap:16px;margin-bottom:26px;align-items:flex-start;}
+  .contact-row svg{width:20px;height:20px;color:var(--terracotta);flex-shrink:0;margin-top:2px;}
+  .contact-row strong{display:block;font-size:14px;color:#fff;margin-bottom:3px;}
+  .contact-row span, .contact-row a{font-size:13.5px;color:rgba(255,255,255,0.65);}
+  .contact-row a:hover{color:var(--terracotta);}
+  .areas{margin-top:34px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.15);}
+  .areas strong{display:block;color:#fff;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em;}
+  .areas span{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.9;}
+  .map-embed{position:relative;min-height:520px;}
+  .map-embed iframe{width:100%;height:100%;min-height:520px;border:0;display:block;filter:grayscale(0.15) contrast(1.05);}
+
+  /* ---------- Footer ---------- */
+  footer{background:#1C140D;color:rgba(255,255,255,0.55);padding:56px 0 26px;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-logo{font-family:'Fraunces',serif;font-size:22px;color:#fff;margin-bottom:14px;}
+  .footer-logo span{color:var(--terracotta);}
+  .footer-col h5{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:18px;}
+  .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;}
+  .footer-col a{font-size:13.5px;transition:color .2s;}
+  .footer-col a:hover{color:var(--terracotta);}
+  .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12.5px;flex-wrap:wrap;gap:10px;}
+  .social-row{display:flex;gap:12px;}
+  .social-row a{width:36px;height:36px;border:1px solid rgba(255,255,255,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .social-row a:hover{background:var(--terracotta);border-color:var(--terracotta);}
+  .social-row svg{width:16px;height:16px;}
+
+  /* ---------- Floating WhatsApp + mobile sticky bar ---------- */
+  .float-wa{
+    position:fixed;bottom:88px;right:26px;z-index:600;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    transition:transform .2s ease;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:30px;height:30px;fill:#fff;}
+  .mobile-bar{display:none;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;gap:50px;}
+    .process-steps{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .gallery figure.wide{grid-column:span 2;}
+    .footer-top{flex-direction:column;}
+  }
+  @media (max-width:720px){
+    .nav-links, .header-ctas .btn-outline{display:none;}
+    .menu-toggle{display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:#fff;}
+    header.scrolled .menu-toggle{color:var(--espresso);}
+    .hero-content{padding-bottom:120px;}
+    .hero-stats{gap:28px;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-steps{grid-template-columns:1fr;}
+    .process-inner{padding:56px 26px;}
+    .section-pad{padding:70px 0;}
+    .contact-info{padding:44px 26px;}
+    .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px;}
+    .float-wa{bottom:96px;width:52px;height:52px;}
+    .float-wa svg{width:26px;height:26px;}
+    .mobile-bar{
+      display:flex;position:fixed;bottom:0;left:0;right:0;z-index:600;
+      background:var(--espresso);
+    }
+    .mobile-bar a{
+      flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+      padding:12px 0 10px;color:#fff;font-size:11px;font-weight:700;
+      border-right:1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-bar a:last-child{border-right:none;}
+    .mobile-bar svg{width:20px;height:20px;}
+    body{padding-bottom:64px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">DEV <span>The Interior World</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-ctas">
+      <a class="icon-btn" href="tel:+919951933973" aria-label="Call us">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn-outline" style="padding:11px 22px;" href="https://wa.me/919951933973?text=Hi%2C%20I%27m%20interested%20in%20interior%2Fexterior%20design%20work." target="_blank" rel="noopener">WhatsApp Us</a>
+      <div class="menu-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-content">
+    <span class="eyebrow">Interior &amp; Exterior Designers · Vijayawada</span>
+    <h1>Spaces designed<br>around <em>how you live.</em></h1>
+    <p class="lead">DEV The Interior World plans, designs and executes complete interior &amp; exterior projects across Vijayawada — from a single room to a full turnkey home, with a team that shows up on time and finishes what it starts.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/919951933973?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20for%20my%20interior%2Fexterior%20project." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.2 14.9 3.8 13.5 3.8 12c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
+        Get Free Quote
+      </a>
+      <a class="btn btn-ghost" href="tel:+919951933973">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>150+</strong><span>Projects Completed</span></div>
+      <div><strong>8+ Yrs</strong><span>Design Experience</span></div>
+      <div><strong>4.8★</strong><span>Rated on Google</span></div>
+      <div><strong>100%</strong><span>On-Site Execution</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- signature swatch strip -->
+<div class="swatch-strip">
+  <div style="background:#2B211A;"></div>
+  <div style="background:#B08D57;"></div>
+  <div style="background:#C1652F;"></div>
+  <div style="background:#6E8AA3;"></div>
+  <div style="background:#EDE3D2;"></div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Complete interior &amp; exterior solutions, under one roof.</h2>
+      <p>Whether it's one room or the whole house — inside and out — our in-house design and execution team handles it end to end.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="num">01</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        <h3>Interior Design</h3>
+        <p>Living rooms, bedrooms, false ceilings, wardrobes and lighting — designed around your family, not a catalogue.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M9 21V13h6v8"/><path d="M3 8l9-5 9 5"/></svg>
+        <h3>Exterior &amp; Elevation</h3>
+        <p>Facade design, elevation cladding, outdoor lighting, boundary walls and gates that lift your home's street presence.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+        <h3>Modular Kitchen</h3>
+        <p>Space-efficient layouts, storage-first cabinetry and durable countertops built for daily Indian cooking.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 12l4-4M3 12l4 4"/><path d="M21 6H10M21 18H10"/></svg>
+        <h3>False Ceiling &amp; Lighting</h3>
+        <p>Gypsum, POP and wood-panel ceiling designs paired with layered lighting that changes the feel of a room.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">05</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+        <h3>Painting &amp; Texture</h3>
+        <p>Interior &amp; exterior painting, textured finishes and accent walls done with proper prep — not a quick coat.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">06</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Renovation &amp; Turnkey</h3>
+        <p>Full home makeovers managed start to finish — design, materials, execution and handover on one timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="swatch-strip">
+  <div style="background:#EDE3D2;"></div>
+  <div style="background:#6E8AA3;"></div>
+  <div style="background:#C1652F;"></div>
+  <div style="background:#B08D57;"></div>
+  <div style="background:#2B211A;"></div>
+</div>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section-pad bg-sand">
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow">Why Homeowners Choose Us</span>
+      <h2 style="font-size:clamp(26px,3vw,36px);margin-top:16px;">Design that gets built the way it was drawn.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="mark">1</div>
+          <div><h4>In-house design + execution team</h4><p>No handoffs between a "designer" and a separate contractor — the same team designs it and builds it.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="mark">2</div>
+          <div><h4>Fixed timelines, fixed quotes</h4><p>You get a clear quote and schedule before work starts, with no surprise cost additions mid-project.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="mark">3</div>
+          <div><h4>Quality materials, honestly sourced</h4><p>We show you the actual brands and materials being used — plywood grade, hardware, laminate — before we buy.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="mark">4</div>
+          <div><h4>Local team, local accountability</h4><p>Based in Vijayawada — reachable on call or WhatsApp during and long after your project is handed over.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-photo">
+      <div class="frame"></div>
+      <img src="images/M_Bedroom.jpg" alt="Master bedroom interior design by DEV The Interior World, Vijayawada">
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="section-pad" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Work</span>
+      <h2>A few spaces we've designed recently.</h2>
+      <p>Real renders and completed layouts from our recent Vijayawada projects — bedrooms, living rooms, kitchens and full home elevations.</p>
+    </div>
+    <div class="gallery">
+      <figure class="wide"><img src="images/hall.jpg" alt="Modern living room interior design"><figcaption>Living Room — Contemporary Family Home</figcaption></figure>
+      <figure><img src="images/M_Bedroom2.jpg" alt="Master bedroom design"><figcaption>Master Bedroom Suite</figcaption></figure>
+      <figure class="tall"><img src="images/kitchen.jpg" alt="Modular kitchen with dining island"><figcaption>Modular Kitchen &amp; Dining Island</figcaption></figure>
+      <figure><img src="images/chbedroom.jpg" alt="Children's bedroom interior design"><figcaption>Children's Bedroom</figcaption></figure>
+      <figure><img src="images/tv_unit.jpg" alt="TV unit and living space design"><figcaption>TV Unit &amp; Lounge Wall</figcaption></figure>
+      <figure class="wide"><img src="images/nandhu-02.jpg" alt="Open plan living and dining interior"><figcaption>Open-Plan Living &amp; Dining</figcaption></figure>
+      <figure class="wide" style="grid-column:span 2;"><img src="images/first_floor.jpg" alt="Home exterior elevation design by DEV The Interior World"><figcaption>Exterior Elevation Design</figcaption></figure>
+    </div>
+    <div style="margin-top:44px;display:flex;justify-content:center;">
+      <a class="btn btn-dark" href="https://wa.me/919951933973?text=Hi%2C%20I%27d%20like%20to%20see%20more%20of%20your%20project%20photos." target="_blank" rel="noopener">See More Projects on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section-pad bg-dark" id="process">
+  <div class="wrap">
+    <div class="process-wrap">
+      <div class="process-bg"></div>
+      <div class="process-inner">
+        <span class="eyebrow" style="color:#E9C79C;">How It Works</span>
+        <h2 style="color:#fff;font-size:clamp(26px,3vw,34px);margin-top:16px;">From first call to handover, in four steps.</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="stepnum">01</div>
+            <h4>Free Site Visit</h4>
+            <p>We visit your space, understand your needs and take accurate measurements — at no cost.</p>
+          </div>
+          <div class="process-step">
+            <div class="stepnum">02</div>
+            <h4>Design &amp; Quote</h4>
+            <p>You get 3D layouts, material options and one clear, itemised quote — no hidden lines.</p>
+          </div>
+          <div class="process-step">
+            <div class="stepnum">03</div>
+            <h4>Execution</h4>
+            <p>Our team executes on the agreed timeline, with regular photo updates as work progresses.</p>
+          </div>
+          <div class="process-step">
+            <div class="stepnum">04</div>
+            <h4>Handover</h4>
+            <p>Final walkthrough, snag-list clearance, and a clean, ready-to-move-in space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section-pad" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Client Reviews</span>
+      <h2>What clients say after the dust settles.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"They stuck to the timeline they promised, which is rare. The false ceiling and wardrobe work came out exactly like the design they showed us."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">R</div>
+          <div><strong>Ramesh K.</strong><span>Vijayawada</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Our modular kitchen was redone in under three weeks. Good communication throughout — they'd send photos every couple of days."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">S</div>
+          <div><strong>Sireesha P.</strong><span>Governorpet</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Did our home's exterior elevation and it completely changed how the house looks from the street. Fair pricing, no pressure to upsell."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">N</div>
+          <div><strong>Naveen R.</strong><span>Patamata</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="google-badge">
+      <svg width="30" height="30" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4c-7.4 0-13.8 4.1-17.1 10.1z"/><path fill="#4CAF50" d="M24 44c5.4 0 10.4-2.1 14-5.5l-6.5-5.4c-2 1.4-4.6 2.3-7.5 2.3-5.2 0-9.6-3.3-11.3-7.9l-6.6 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.5 5.4C40.9 36.6 44 30.9 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+      <div><strong>4.8 out of 5</strong><span>Based on client reviews on Google — see all reviews on our Google Business Profile.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Ready to start planning your space?</h2>
+    <div class="cta-row">
+      <a class="btn btn-dark" href="https://wa.me/919951933973?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20site%20visit." target="_blank" rel="noopener">Book a Free Site Visit</a>
+      <a class="btn btn-ghost" href="tel:+919951933973">Call +91 99519 33973</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Visit our studio or reach out directly.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>DEV The Interior World</h3>
+        <p>Interior &amp; Exterior Design Studio — Vijayawada</p>
+
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Studio Address</strong><span>Kothavantena, Durga Agraharam,<br>Vijayawada – 520002</span></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>Call</strong><a href="tel:+919951933973">+91 99519 33973</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.2 14.9 3.8 13.5 3.8 12c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
+          <div><strong>WhatsApp</strong><a href="https://wa.me/919951933973" target="_blank" rel="noopener">+91 99519 33973</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><strong>Working Hours</strong><span>Mon – Sat: 9:30 AM – 7:30 PM<br>Sunday: By appointment</span></div>
+        </div>
+
+        <div style="margin-top:34px;">
+          <a class="btn btn-primary" style="width:100%;" href="https://maps.app.goo.gl/eJPTuYVDfwzepLGq9" target="_blank" rel="noopener">Get Directions on Google Maps</a>
+        </div>
+
+        <div class="areas">
+          <strong>Areas We Serve</strong>
+          <span>Durga Agraharam · Governorpet · Patamata · Benz Circle · Gunadala · Poranki · Vijayawada &amp; surrounding areas</span>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Durga+Agraharam,+Vijayawada,+520002&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="DEV The Interior World location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div style="max-width:280px;">
+        <div class="footer-logo">DEV <span>The Interior World</span></div>
+        <p style="font-size:13.5px;color:rgba(255,255,255,0.5);">Interior &amp; exterior design studio based in Vijayawada, designing and executing complete home transformations.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Interior Design</a></li>
+          <li><a href="#services">Exterior &amp; Elevation</a></li>
+          <li><a href="#services">Modular Kitchen</a></li>
+          <li><a href="#services">Renovation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+919951933973">+91 99519 33973</a></li>
+          <li><a href="https://wa.me/919951933973" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><span style="font-size:13.5px;">Kothavantena, Durga Agraharam,<br>Vijayawada – 520002</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DEV The Interior World. All rights reserved.</span>
+      <div class="social-row">
+        <a href="https://www.instagram.com/ddhomedesigns0612?igsh=MTV1YW83bGc1eDkzYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://www.facebook.com/share/1bFRBQWbmv/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="float-wa" href="https://wa.me/919951933973?text=Hi%2C%20I%27m%20interested%20in%20interior%2Fexterior%20design%20work." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.2 14.9 3.8 13.5 3.8 12c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
+</a>
+
+<!-- Mobile sticky bar -->
+<div class="mobile-bar">
+  <a href="tel:+919951933973">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="https://wa.me/919951933973" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.2 14.9 3.8 13.5 3.8 12c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://maps.app.goo.gl/eJPTuYVDfwzepLGq9" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Directions
+  </a>
+</div>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>
